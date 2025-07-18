@@ -1,10 +1,12 @@
 import Link from 'next/link'
+import { Star, GitFork } from 'lucide-react'
 
-interface Project {
+export interface Project {
   title: string
   description: string
   stack: string[]
   github?: string
+  githubStats?: { stars: number; forks: number } | null
 }
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -20,9 +22,17 @@ export default function ProjectCard({ project }: { project: Project }) {
         ))}
       </ul>
       {project.github && (
-        <Link href={project.github} className="text-sm text-primary underline">
-          GitHub
-        </Link>
+        <div className="flex items-center gap-4 mt-4">
+          <Link href={project.github} className="text-sm text-primary underline">
+            GitHub
+          </Link>
+          {project.githubStats && (
+            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <span className="flex items-center gap-1"><Star size={14} /> {project.githubStats.stars}</span>
+              <span className="flex items-center gap-1"><GitFork size={14} /> {project.githubStats.forks}</span>
+            </div>
+          )}
+        </div>
       )}
     </div>
   )

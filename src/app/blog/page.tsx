@@ -1,20 +1,9 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Link from 'next/link'
+import { getSortedPostsData } from '@/lib/posts'
 
-const posts = [
-  {
-    title: 'Why Event-Based Processing Will Outlive the Von Neumann Model',
-    date: '2024-01-01',
-    summary: 'A short overview of event-driven architectures.',
-    link: '#'
-  },
-  {
-    title: 'Designing for Fault Tolerance in Neuromorphic Meshes',
-    date: '2024-02-01',
-    summary: 'Building resilient neural fabrics.',
-    link: '#'
-  }
-]
+const posts = getSortedPostsData()
 
 export default function Blog() {
   return (
@@ -28,7 +17,7 @@ export default function Blog() {
               <h3 className="font-semibold text-lg mb-1">{p.title}</h3>
               <p className="text-xs text-muted-foreground mb-2">{p.date}</p>
               <p className="text-sm mb-2">{p.summary}</p>
-              <a href={p.link} className="text-primary underline text-sm">Read More</a>
+              <Link href={`/blog/${p.id}`} className="text-primary underline text-sm">Read More</Link>
             </li>
           ))}
         </ul>
