@@ -1,5 +1,4 @@
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import ContentShell from '@/components/ContentShell'
 import AnimatedProjectCard from '@/components/AnimatedProjectCard'
 import { getRepoStats } from '@/lib/github'
 
@@ -12,8 +11,14 @@ const projects = [
   },
   {
     title: 'CortexX',
-    description: 'High-throughput Neuromorphic Simulator',
+    description: 'Neuromorphic hardware toolkit for rapid prototyping.',
     stack: ['Go', 'WebGPU'],
+    github: '#'
+  },
+  {
+    title: 'Synaptron',
+    description: 'Low-power spiking network accelerator research platform.',
+    stack: ['C++', 'OpenCL'],
     github: '#'
   }
 ]
@@ -26,17 +31,13 @@ export default async function Projects() {
     return p
   }))
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-1 container mx-auto px-4 py-24 space-y-6">
-        <h1 className="text-3xl font-bold mb-4">Projects</h1>
-        <div className="grid sm:grid-cols-2 gap-6">
-          {projectsWithStats.map((p, i) => (
-            <AnimatedProjectCard key={p.title} project={p} index={i} />
-          ))}
-        </div>
-      </main>
-      <Footer />
-    </div>
+    <ContentShell>
+      <h1 className="text-3xl font-bold mb-4">Projects</h1>
+      <div className="grid sm:grid-cols-2 gap-6">
+        {projectsWithStats.map((p, i) => (
+          <AnimatedProjectCard key={p.title} project={p} index={i} />
+        ))}
+      </div>
+    </ContentShell>
   )
 }
