@@ -5,7 +5,7 @@ export default function About() {
     <ContentShell>
       <h1 className="text-3xl font-bold mb-4">About Leto Hillza</h1>
       <p>
-        Leto Hillza is a Senior Staff Software Engineer who imagines computers as living organisms. His career spans quantum robotics, adaptive microcircuits, and speculative cognitive design.
+        Leto Hillza is a Senior Staff Software <Engineer></Engineer> who imagines computers as living organisms. His career spans quantum robotics, adaptive microcircuits, and speculative cognitive design.
       </p>
       <p>
         He is credited with the creation of the Above The Spikes Architecture (ATSA), a framework for energy‑adaptive intelligence that scales far beyond traditional CPU and GPU limits. His approach blends biological efficiency with machine‑native cognition through dynamic network evolution, real‑time learning, and sustainable AI.
