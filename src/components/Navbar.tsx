@@ -17,7 +17,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 w-full z-20 backdrop-blur-md bg-background/70 border-b">
+    <header className="backdrop-blur-md bg-background/70 border-b">
       <nav className="max-w-7xl mx-auto flex items-center justify-between p-4">
         <Link href="/" className="font-mono font-semibold">NEURO</Link>
         <button

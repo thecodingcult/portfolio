@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Star, GitFork } from 'lucide-react'
+import { Star, GitFork, ArrowUpRight } from 'lucide-react'
 
 export interface Project {
   title: string
@@ -11,29 +11,31 @@ export interface Project {
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="p-4 border rounded-lg bg-card">
-      <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
-      <p className="mb-2 text-sm text-muted-foreground">{project.description}</p>
-      <ul className="flex flex-wrap gap-2 text-xs mb-2">
-        {project.stack.map(s => (
-          <li key={s} className="px-2 py-0.5 bg-muted rounded">
-            {s}
-          </li>
-        ))}
-      </ul>
-      {project.github && (
-        <div className="flex items-center gap-4 mt-4">
-          <Link href={project.github} className="text-sm text-primary underline">
-            GitHub
-          </Link>
-          {project.githubStats && (
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span className="flex items-center gap-1"><Star size={14} /> {project.githubStats.stars}</span>
-              <span className="flex items-center gap-1"><GitFork size={14} /> {project.githubStats.forks}</span>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
+    <Link
+      href={project.github && project.github !== '#' ? project.github : '/projects'}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block p-4 rounded-lg hover:bg-muted/50 transition-colors duration-200 group"
+    >
+      <div className="flex justify-between items-start">
+        <h3 className="font-semibold text-lg">{project.title}</h3>
+        <ArrowUpRight className="text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" size={18} />
+      </div>
+
+      <p className="mt-2 text-sm text-muted-foreground">{project.description}</p>
+
+      <div className="mt-4 flex items-center justify-between text-muted-foreground">
+        <p className="text-xs font-mono">
+          {project.stack.join(' • ')}
+        </p>
+
+        {project.githubStats && (
+          <div className="flex items-center gap-4 text-sm">
+            <span className="flex items-center gap-1.5"><Star size={14} /> {project.githubStats.stars}</span>
+            <span className="flex items-center gap-1.5"><GitFork size={14} /> {project.githubStats.forks}</span>
+          </div>
+        )}
+      </div>
+    </Link>
   )
 }
