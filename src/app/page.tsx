@@ -14,7 +14,14 @@ export default function Home() {
 
       <main className="flex-1 flex flex-col items-center justify-center text-center px-4 z-10">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white">LETO HILLZA</h1>
-        <p className="mt-4 text-lg md:text-xl text-neutral-400">Senior Staff Software Engineer</p>
+        <p className="mt-4 text-lg md:text-xl text-neutral-400">
+          Senior Staff Software Engineer @{' '}
+          <img
+            src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png"
+            alt="Google logo"
+            className="inline w-5 h-5 ml-1 align-text-bottom"
+          />
+        </p>
 
         <Link
           href="/about"
