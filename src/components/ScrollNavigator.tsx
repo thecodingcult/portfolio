@@ -16,10 +16,15 @@ export default function ScrollNavigator({ children }: { children: React.ReactNod
       if (now - last < 1000) return
       const index = order.indexOf(pathname)
       if (index === -1) return
-      if (e.deltaY > 50 && index < order.length - 1) {
+
+      const doc = document.documentElement
+      const atBottom = window.innerHeight + window.scrollY >= doc.scrollHeight - 50
+      const atTop = window.scrollY <= 50
+
+      if (e.deltaY > 50 && atBottom && index < order.length - 1) {
         last = now
         router.push(order[index + 1])
-      } else if (e.deltaY < -50 && index > 0) {
+      } else if (e.deltaY < -50 && atTop && index > 0) {
         last = now
         router.push(order[index - 1])
       }
