@@ -2,16 +2,22 @@ import ContentShell from '@/components/ContentShell'
 
 const publications = [
   {
-    title: 'Neuromorphic Circuits for Adaptive Control',
-    journal: 'Journal of Neural Engineering',
-    link: '#',
-    abstract: 'Exploring circuitry that adjusts to environmental feedback for ultra-low-power robotics.'
+    title:
+      'Above the Spikes: Architectures for Neuromorphic Supremacy Beyond Traditional Silicon',
+    journal: 'Medium',
+    link:
+      'https://medium.com/@hillzadev/above-the-spikes-architectures-for-neuromorphic-supremacy-beyond-traditional-silicon-atsa-by-e7b86ca7ec9e',
+    abstract:
+      'Leto Hillza explores novel designs poised to outpace conventional silicon.'
   },
   {
-    title: 'Hybrid Memristor Networks',
-    journal: 'Proceedings of Future Computing',
-    link: '#',
-    abstract: 'A speculative review of memristive devices and their application in resilient computing.'
+    title:
+      'Above the Spikes III: A Path to Neuromorphic-Nuclear Symbiosis',
+    journal: 'Medium',
+    link:
+      'https://medium.com/@hillzadev/above-the-spikes-iii-energy-sovereign-cognitive-systems-a-path-to-neuromorphic-nuclear-9c00422a4abb',
+    abstract:
+      'Investigating energy-sovereign cognitive systems that marry neuromorphic computing with nuclear power.'
   }
 ]
 

@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 
-const order = ['/', '/about', '/projects', '/publications', '/blog', '/contact']
+const order = ['/', '/about', '/projects', '/publications', '/contact']
 
 export default function ScrollNavigator({ children }: { children: React.ReactNode }) {
   const router = useRouter()

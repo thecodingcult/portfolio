@@ -15,6 +15,6 @@ npm start         # start the production server
 - Animated brain‑to‑chip background using Framer Motion
 - Dark and light themes powered by `next-themes`
 - Responsive layout with Tailwind CSS
-- Placeholder pages for About, Projects, Publications, Blog and Contact
+- Pages for About, Projects, Publications and Contact
 
 The site is ready to be deployed on [Vercel](https://vercel.com/).
