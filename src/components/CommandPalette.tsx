@@ -2,7 +2,7 @@
 
 import { Command } from 'cmdk'
 import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, type Dispatch, type SetStateAction } from 'react'
 import { useTheme } from 'next-themes'
 
 const pages = [
@@ -16,7 +16,7 @@ export default function CommandPalette({
   setOpen,
 }: {
   open: boolean
-  setOpen: (open: boolean) => void
+  setOpen: Dispatch<SetStateAction<boolean>>
 }) {
   const router = useRouter()
   const { theme, setTheme } = useTheme()
