@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { notFound } from 'next/navigation'
 import ContentShell from '@/components/ContentShell'
 import fs from 'fs'
@@ -6,8 +5,9 @@ import path from 'path'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 
-export default function PostPage({ params }: any) {
-  const filePath = path.join(process.cwd(), 'posts', `${params.slug}.md`)
+export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const filePath = path.join(process.cwd(), 'posts', `${slug}.md`)
   if (!fs.existsSync(filePath)) {
     notFound()
   }
