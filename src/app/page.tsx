@@ -23,6 +23,8 @@ export default function Home() {
           className="mt-12 inline-flex items-center gap-2.5 px-10 py-4 text-xl text-white border border-neutral-600 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={() => setIsHovered(true)}
+          onTouchEnd={() => setIsHovered(false)}
         >
           Enter <ArrowRight size={22} />
         </Link>

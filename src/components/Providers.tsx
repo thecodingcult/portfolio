@@ -3,14 +3,18 @@
 import { ThemeProvider } from 'next-themes'
 import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 import CommandPalette from './CommandPalette'
 import ScrollNavigator from './ScrollNavigator'
+import MobileCommandButton from './MobileCommandButton'
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
+  const [commandOpen, setCommandOpen] = useState(false)
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-      <CommandPalette />
+      <CommandPalette open={commandOpen} setOpen={setCommandOpen} />
+      <MobileCommandButton onClick={() => setCommandOpen(true)} />
       <ScrollNavigator>
         <AnimatePresence mode="wait">
           <motion.div

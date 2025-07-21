@@ -2,7 +2,7 @@
 
 import { Command } from 'cmdk'
 import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useTheme } from 'next-themes'
 
 const pages = [
@@ -11,8 +11,13 @@ const pages = [
   { label: 'Projects', href: '/projects' },
 ]
 
-export default function CommandPalette() {
-  const [open, setOpen] = useState(false)
+export default function CommandPalette({
+  open,
+  setOpen,
+}: {
+  open: boolean
+  setOpen: (open: boolean) => void
+}) {
   const router = useRouter()
   const { theme, setTheme } = useTheme()
 
@@ -25,7 +30,7 @@ export default function CommandPalette() {
     }
     window.addEventListener('keydown', down)
     return () => window.removeEventListener('keydown', down)
-  }, [])
+  }, [setOpen])
 
   return (
     <Command.Dialog
