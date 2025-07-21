@@ -1,3 +1,5 @@
+"use client"
+
 import ContentShell from '@/components/ContentShell'
 import TimelineItem from '@/components/TimelineItem'
 import { Brain, PartyPopper, Rocket } from 'lucide-react'
