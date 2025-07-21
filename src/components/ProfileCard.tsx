@@ -33,7 +33,7 @@ export default function ProfileCard() {
       {/* Clearer, larger title */}
       <p className="text-lg text-foreground/80 mt-2">Senior Staff Software Engineer</p>
 
-      {/* Company and Location information */}
+      {/* NEW: Company and Location information */}
       <div className="mt-3 text-md text-muted-foreground flex items-center gap-x-3">
         <span>Google</span>
         <span className="text-xs">•</span>
