@@ -19,6 +19,7 @@ export default function Home() {
         </div>
         <Link
           href="/about"
+          // Increased margin, padding, text size, and icon size for better scale
           className="mt-12 inline-flex items-center gap-2.5 px-10 py-4 text-xl text-white border border-neutral-600 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
