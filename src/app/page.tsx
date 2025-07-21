@@ -2,7 +2,7 @@
 
 import { ArrowRight } from 'lucide-react'
 import BrainToChipAnimation from '@/components/BrainToChipAnimation'
-import Image from 'next/image'
+import ProfileCard from '@/components/ProfileCard'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -13,18 +13,8 @@ export default function Home() {
     <div className="relative flex flex-col min-h-screen bg-black">
       <BrainToChipAnimation isHovered={isHovered} />
 
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-4 z-10">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white">LETO HILLZA</h1>
-        <p className="mt-4 text-lg md:text-xl text-neutral-400 flex items-center justify-center gap-1">
-          Senior Staff Software Engineer @
-          <Image
-            src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-            alt="Google logo"
-            width={20}
-            height={20}
-            className="inline-block h-5 w-5 align-text-bottom ml-1"
-          />
-        </p>
+      <main className="flex-1 flex flex-col items-center justify-center text-center px-4 z-10 space-y-8">
+        <ProfileCard />
 
         <Link
           href="/about"
