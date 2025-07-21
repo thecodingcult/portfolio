@@ -15,10 +15,10 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         <AnimatePresence mode="wait">
           <motion.div
             key={pathname}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0, y: -5 }}
+            transition={{ duration: 0.25 }}
           >
             {children}
           </motion.div>
