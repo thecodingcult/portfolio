@@ -15,10 +15,10 @@ export default function TimelineItem({ icon: Icon, title, period, children }: Ti
   if (!Icon) {
     return (
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.35 }}
         className="relative pl-10"
       >
         <div className="absolute left-0 top-1">
@@ -35,10 +35,10 @@ export default function TimelineItem({ icon: Icon, title, period, children }: Ti
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.35 }}
       className="relative pl-10"
     >
       <div className="absolute left-0 top-1">

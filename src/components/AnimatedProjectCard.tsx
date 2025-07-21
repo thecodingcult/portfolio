@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import ProjectCard, { Project } from './ProjectCard'
 
 const variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 10 },
   visible: { opacity: 1, y: 0 },
 }
 
@@ -15,7 +15,7 @@ export default function AnimatedProjectCard({ project, index }: { project: Proje
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.5 }}
+      transition={{ delay: index * 0.1, duration: 0.35 }}
     >
       <ProjectCard project={project} />
     </motion.div>
