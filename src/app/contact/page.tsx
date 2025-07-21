@@ -8,8 +8,22 @@ export default function Contact() {
       <p>You can reach me via email or follow my work online.</p>
       <div className="space-x-4">
         <Link href="mailto:neuromorph@example.com" className="underline">Email</Link>
-        <Link href="https://github.com" className="underline">GitHub</Link>
-        <Link href="https://linkedin.com" className="underline">LinkedIn</Link>
+        <a
+          href="https://github.com"
+          className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://linkedin.com"
+          className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
       </div>
     </ContentShell>
   )
