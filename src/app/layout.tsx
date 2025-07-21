@@ -4,10 +4,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "My Portfolio",
-  description: "Showcase of projects, publications and posts",
+  description: "Showcase of projects and publications",
   openGraph: {
     title: "My Portfolio",
-    description: "Showcase of projects, publications and posts",
+    description: "Showcase of projects and publications",
   },
 };
 

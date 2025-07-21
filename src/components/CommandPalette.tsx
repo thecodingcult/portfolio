@@ -9,7 +9,6 @@ const pages = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Blog', href: '/blog' },
 ]
 
 export default function CommandPalette() {
