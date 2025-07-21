@@ -1,7 +1,5 @@
-"use client"
-
-import type { LucideIcon } from 'lucide-react'
 import { motion } from 'framer-motion'
+import type { LucideIcon } from 'lucide-react' // Use 'type' for clarity
 
 export interface TimelineItemProps {
   icon: LucideIcon
