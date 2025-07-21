@@ -21,7 +21,7 @@ export default function Home() {
             src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
             alt="Google"
             width={40} // Increased size
-            height={30} // Increased size
+            height={40} // Increased size
             className="inline w-15 h-8" // Adjusted Tailwind classes
           />
         </p>

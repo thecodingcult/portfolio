@@ -15,15 +15,17 @@ export default function Home() {
 
       <main className="flex-1 flex flex-col items-center justify-center text-center px-4 z-10">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white">LETO HILLZA</h1>
-        <p className="mt-4 text-lg md:text-xl text-neutral-400 flex items-center justify-center gap-1">
-          Senior Staff Software Engineer  @
+        <p className="mt-4 text-lg md:text-xl text-neutral-400">
           <Image
-            src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-            alt="Google"
-            width={40} // Increased size
-            height={30} // Increased size
-            className="inline w-15 h-8" // Adjusted Tailwind classes
+            src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png"
+            alt="Google logo"
+            width={20}
+            height={20}
+            className="inline w-5 h-5 ml-1 align-text-bottom"
+            style={{ display: 'inline', verticalAlign: 'text-bottom', marginLeft: '0.25rem' }}
+            unoptimized
           />
+        
         </p>
 
         <Link
