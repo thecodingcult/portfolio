@@ -5,6 +5,51 @@ import { Brain, PartyPopper, Rocket } from 'lucide-react'
 import ContentShell from '@/components/ContentShell'
 import TimelineItem from '@/components/TimelineItem'
 
+// Abstracting experience data into an array
+const experiences = [
+  {
+    icon: PartyPopper,
+    title: "Senior Staff Software Engineer, Google",
+    period: "Feb 2025 – Present • Atlanta, GA (Hybrid)",
+    points: [
+      "Collaborate with Google Research to integrate spiking neural networks (SNNs) into scalable production systems.",
+      "Lead design and development of neuromorphic algorithms optimized for edge AI devices.",
+      "Architect hybrid AI solutions that combine traditional deep-learning pipelines with brain-inspired components.",
+      "Prototype and deploy low-power AI accelerators on custom silicon, driving cross-functional hardware/software efforts.",
+      "Publish internal white-papers and contribute to open-source tooling for brain-inspired computing.",
+    ],
+  },
+  {
+    icon: Rocket,
+    title: "Staff Software Engineer, Google",
+    period: "Feb 2022 – Feb 2025",
+    points: [
+      "Designed machine-learning systems to optimize ad delivery and bidding strategies across Google Ads.",
+      "Built scalable real-time data pipelines and ML model-training infrastructure.",
+      "Launched the Budgeting Optimization System (BOS) for dynamic ad-spend allocation using reinforcement learning.",
+      "Improved campaign outcomes through statistical modeling and continuous experimentation.",
+    ],
+  },
+  {
+    icon: Brain,
+    title: "Senior Software Engineer, Google",
+    period: "Jan 2020 – Feb 2022",
+    points: [
+      "Led a backend engineering team enhancing usability for Google Chat and Google Drive.",
+      "Partnered with cross-functional groups to identify user-experience gaps and ship high-impact improvements.",
+    ],
+  },
+  {
+    icon: Brain,
+    title: "Software Engineer, Google",
+    period: "Jan 2018 – Jan 2020",
+    points: [
+      "Enhanced Google’s recommendation systems with machine learning and large-scale data analysis.",
+      "Delivered personalized suggestions that boosted user engagement across core properties.",
+    ],
+  },
+]
+
 export default function About() {
   return (
     <ContentShell>
@@ -19,47 +64,15 @@ export default function About() {
       </p>
 
       {/* Experience Timeline */}
-      <section>
-        <ol className="relative space-y-10 border-l border-muted-foreground/20 pl-10">
-          <TimelineItem icon={PartyPopper} title="Senior Staff Software Engineer, Google" period="Feb 2025 – Present • Atlanta, GA (Hybrid)">
-          <li>
-            Collaborate with Google Research to integrate&nbsp;
-            <em>spiking neural networks (SNNs)</em> into scalable production systems.
-          </li>
-          <li>Lead design and development of neuromorphic algorithms optimized for edge AI devices.</li>
-          <li>
-            Architect hybrid AI solutions that combine traditional deep‑learning pipelines with
-            brain‑inspired components.
-          </li>
-          <li>
-            Prototype and deploy low‑power AI accelerators on custom silicon, driving cross‑functional
-            hardware/software efforts.
-          </li>
-          <li>Publish internal white‑papers and contribute to open‑source tooling for brain‑inspired computing.</li>
+      <ol className="relative border-l border-border/50">
+        {experiences.map((exp, index) => (
+          <TimelineItem key={index} icon={exp.icon} title={exp.title} period={exp.period}>
+            {exp.points.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
           </TimelineItem>
-
-          <TimelineItem icon={Rocket} title="Staff Software Engineer, Google" period="Feb 2022 – Feb 2025">
-          <li>
-            Designed machine‑learning systems to optimize ad delivery and bidding strategies across Google Ads.
-          </li>
-          <li>Built scalable real‑time data pipelines and ML model‑training infrastructure.</li>
-          <li>
-            Launched the Budgeting Optimization System (BOS) for dynamic ad‑spend allocation using reinforcement learning.
-          </li>
-          <li>Improved campaign outcomes through statistical modeling and continuous experimentation.</li>
-          </TimelineItem>
-
-          <TimelineItem icon={Brain} title="Senior Software Engineer, Google" period="Jan 2020 – Feb 2022">
-          <li>Led a backend engineering team enhancing usability for Google Chat and Google Drive.</li>
-          <li>Partnered with cross‑functional groups to identify user‑experience gaps and ship high‑impact improvements.</li>
-          </TimelineItem>
-
-          <TimelineItem icon={Brain} title="Software Engineer, Google" period="Jan 2018 – Jan 2020">
-          <li>Enhanced Google’s recommendation systems with machine learning and large‑scale data analysis.</li>
-          <li>Delivered personalized suggestions that boosted user engagement across core properties.</li>
-          </TimelineItem>
-        </ol>
-      </section>
+        ))}
+      </ol>
     </ContentShell>
   )
 }
