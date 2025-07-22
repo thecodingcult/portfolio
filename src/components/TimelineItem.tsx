@@ -1,7 +1,6 @@
 "use client"
 
 import type { LucideIcon } from 'lucide-react'
-import { motion } from 'framer-motion'
 
 export interface TimelineItemProps {
   icon: LucideIcon
@@ -11,29 +10,16 @@ export interface TimelineItemProps {
 }
 
 export default function TimelineItem({ icon: Icon, title, period, children }: TimelineItemProps) {
-  const IconOrFallback = () => {
-    if (Icon) {
-      return <Icon className="h-4 w-4 text-primary" />
-    }
-    return <span className="text-primary text-sm">?</span>
-  }
-
   return (
-    <motion.li
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.35 }}
-      className="relative pl-10"
-    >
-      <div className="absolute left-0 top-1 -translate-x-1/2 flex h-6 w-6 items-center justify-center rounded-full bg-background ring-2 ring-primary">
-        <IconOrFallback />
-      </div>
-      <h2 className="text-xl font-semibold">{title}</h2>
-      <p className="text-sm text-muted-foreground">{period}</p>
-      <ul className="list-disc ml-6 mt-2 space-y-1 text-base leading-relaxed">
+    <li className="mb-10 ml-8">
+      <span className="absolute flex items-center justify-center w-8 h-8 bg-background rounded-full -left-4 ring-4 ring-background">
+        <Icon className="w-4 h-4 text-primary" />
+      </span>
+      <h2 className="text-xl font-semibold leading-tight">{title}</h2>
+      <p className="text-sm text-muted-foreground mt-0.5">{period}</p>
+      <ul className="list-disc ml-5 mt-3 space-y-2 text-base leading-relaxed text-muted-foreground">
         {children}
       </ul>
-    </motion.li>
+    </li>
   )
 }
