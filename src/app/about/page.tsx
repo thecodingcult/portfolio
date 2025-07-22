@@ -19,8 +19,9 @@ export default function About() {
       </p>
 
       {/* Experience Timeline */}
-      <section className="space-y-10">
-        <TimelineItem icon={PartyPopper} title="Senior Staff Software Engineer, Google" period="Feb 2025 – Present • Atlanta, GA (Hybrid)">
+      <section>
+        <ol className="relative space-y-10 border-l border-muted-foreground/20 pl-10">
+          <TimelineItem icon={PartyPopper} title="Senior Staff Software Engineer, Google" period="Feb 2025 – Present • Atlanta, GA (Hybrid)">
           <li>
             Collaborate with Google Research to integrate&nbsp;
             <em>spiking neural networks (SNNs)</em> into scalable production systems.
@@ -35,9 +36,9 @@ export default function About() {
             hardware/software efforts.
           </li>
           <li>Publish internal white‑papers and contribute to open‑source tooling for brain‑inspired computing.</li>
-        </TimelineItem>
+          </TimelineItem>
 
-        <TimelineItem icon={Rocket} title="Staff Software Engineer, Google" period="Feb 2022 – Feb 2025">
+          <TimelineItem icon={Rocket} title="Staff Software Engineer, Google" period="Feb 2022 – Feb 2025">
           <li>
             Designed machine‑learning systems to optimize ad delivery and bidding strategies across Google Ads.
           </li>
@@ -46,17 +47,18 @@ export default function About() {
             Launched the Budgeting Optimization System (BOS) for dynamic ad‑spend allocation using reinforcement learning.
           </li>
           <li>Improved campaign outcomes through statistical modeling and continuous experimentation.</li>
-        </TimelineItem>
+          </TimelineItem>
 
-        <TimelineItem icon={Brain} title="Senior Software Engineer, Google" period="Jan 2020 – Feb 2022">
+          <TimelineItem icon={Brain} title="Senior Software Engineer, Google" period="Jan 2020 – Feb 2022">
           <li>Led a backend engineering team enhancing usability for Google Chat and Google Drive.</li>
           <li>Partnered with cross‑functional groups to identify user‑experience gaps and ship high‑impact improvements.</li>
-        </TimelineItem>
+          </TimelineItem>
 
-        <TimelineItem icon={Brain} title="Software Engineer, Google" period="Jan 2018 – Jan 2020">
+          <TimelineItem icon={Brain} title="Software Engineer, Google" period="Jan 2018 – Jan 2020">
           <li>Enhanced Google’s recommendation systems with machine learning and large‑scale data analysis.</li>
           <li>Delivered personalized suggestions that boosted user engagement across core properties.</li>
-        </TimelineItem>
+          </TimelineItem>
+        </ol>
       </section>
     </ContentShell>
   )
